@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
     create_table :orders do |t|
       t.string :name
       t.datetime :delivery_date
-      t.decimal :price, precison: 2
+      t.decimal  :price, precison: 2
       t.timestamps
     end
   end
