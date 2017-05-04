@@ -12,11 +12,6 @@
 
   <body>
     <header class="row" style="...">
-      <div class="col-md-3">
-        <%= link_to 'PT', '/?lang=pt' %>
-        <span>|</span>
-        <%= link_to 'EN', '/?lang=en' %>
-      </div>
       <div class="col-md-6">
         <img src="<%= asset_path 'joia_europa.png' %>">
       </div>
@@ -26,6 +21,11 @@
         <% else %>
             <%= link_to 'Sign In', new_user_session_path %>
         <% end %>
+      </div>
+      <div class="col-md-3">
+        <%= link_to 'PT', '/?lang=pt' %>
+        <span>|</span>
+        <%= link_to 'EN', '/?lang=en' %>
       </div>
     </header>
 
