@@ -1,7 +1,7 @@
 class CreateStates < ActiveRecord::Migration[5.0]
   def change
 
-    add_reference :states, :orders
+
 
     create_table :states do |t|
       t.string :name
