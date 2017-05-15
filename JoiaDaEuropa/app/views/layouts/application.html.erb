@@ -11,21 +11,23 @@
   </head>
 
   <body>
-    <header class="row" style="...">
+    <header class="header" >
+      <div id="header">
+        <!--<img src="<%= asset_path 'joiaeuropa.png' %>" alt="" id="headerimage">-->
+
+
       <div class="col-md-6">
-        <img src="<%= asset_path 'joia_europa.png' %>">
-      </div>
-      <div class="col-md-3">
         <% if current_user %>
           <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
         <% else %>
             <%= link_to 'Sign In', new_user_session_path %>
         <% end %>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6">
         <%= link_to 'PT', '/?lang=pt' %>
         <span>|</span>
         <%= link_to 'EN', '/?lang=en' %>
+      </div>
       </div>
     </header>
 
