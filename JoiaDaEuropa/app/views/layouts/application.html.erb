@@ -14,19 +14,21 @@
     <header class="header" >
       <div id="header">
         <!--<img src="<%= asset_path 'joiaeuropa.png' %>" alt="" id="headerimage">-->
-
-      <div class="col-md-6">
+        <p>
+       <div class="col-md-12">
         <% if current_user %>
           <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
         <% else %>
             <%= link_to 'Sign In', new_user_session_path %>
         <% end %>
-      </div>
-      <div class="col-md-6">
+        </div>
+
+      <div class="col-md-3">
         <%= link_to 'PT', '/?lang=pt' %>
         <span>|</span>
         <%= link_to 'EN', '/?lang=en' %>
       </div>
+        </p>
       </div>
     </header>
 
