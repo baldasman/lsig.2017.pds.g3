@@ -2,6 +2,8 @@
 
 
   <%= link_to t('my_account'), profile_index_path %>
+
+
   <!-- menu -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -14,7 +16,8 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#home"><b>História</b></a></li>
+          <li><a href="#home"><b>Pagina Inicial</b></a></li>
+          <li><a href="#home">História</a></li>
           <li><a href="#band">Missão</a></li>
           <li><a href="#tour">Notícias</a></li>
           <li><a href="#contact">Contactos</a></li>
@@ -45,7 +48,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="sapato1.jpg" alt="New York">
+        <img src=<%= asset_path'sapato.jpg' %> alt="New York">
         <div class="carousel-caption">
           <h3>New York</h3>
           <p>The atmosphere in New York is lorem ipsum.</p>
@@ -83,20 +86,8 @@
     <h3>Bem vindo!</h3>
 
     <p> A <b> Joia da Europa</b> é uma empresa que se dedica inteiramente á fabricação de calçado de qualidade e conforto.</p>
-    <br>
-    <div class="row">
-      <div class="col-sm-4">
-        <p><strong>Apresentação da linha <p> Outono/Inverno </p></strong></p><br>
-        <img src="<%= asset_path'sapato1.jpg' %>"
-             <h1>"Dia 12 a Joia da Europa apresentou..."</h1>
-      </div>
-      <div class="col-sm-4">
-        <p><strong>Feira em Milão</strong></p><br>
-        <img src="bandmember.jpg" alt="Joia da Europa esteve em...">
-      </div>
-      <div class="col-sm-4">
-        <p><strong>Parceria com a <p>Fatima Lopes </p> </strong></p><br>
-        <img src="bandmember.jpg" alt="Agora tambem parceiros...">
+
+
       </div>
     </div>
   </div>
