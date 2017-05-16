@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   root to: 'home#about_us'
   get '/home/news'
   root to: 'home#news'
+  get '/home/mission'
+  root to: 'home#mission'
+
 end
