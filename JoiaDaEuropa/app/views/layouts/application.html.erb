@@ -17,7 +17,7 @@
 
         <div class="pull-right">
             <% if current_user %>
-                <div>Menu dos users</div>
+                <div>Menu do Utilizador</div>
                 <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
             <% else %>
                 <%= link_to 'Sign In', new_user_session_path %>
