@@ -61,7 +61,7 @@
 <div class="container">
     <div class="row">
         <div class="<%= current_user.nil? ? 'hidden' : 'col-md-3' %>">
-            <h1>My Menu</h1>
+            <h1>Meu menu</h1>
             <ul>
                 <li><%= link_to t('my_account'), profile_index_path %></li>
             </ul>
@@ -89,5 +89,17 @@
         <%= alert %>
     </div>
 <% end %>
+
+
+<footer class="text-center">
+
+  <!--seta de topo <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">-->
+
+
+  <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Jóia da Europa Unipessoal, Lda. © Webdesign by: <a href="https://risema.pt/" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>
+</footer>
+
 </body>
 </html>
