@@ -63,15 +63,17 @@
         <div class="<%= current_user.nil? ? 'hidden' : 'col-md-3' %>">
             <h1>My Menu</h1>
             <ul>
+
                 <li><%= link_to t('my_account'), profile_index_path %></li>
+
+                <li><%= link_to t('client'), home_client_path %></li>
+
             </ul>
-          <ul>
-            <li><%= link_to t('Nova encomenda'), profile_index_path %></li>
-          </ul>
         </div>
         <div class="<%= current_user.nil? ? 'col-md-12' : 'col-md-9' %>">
             <%= yield %>
         </div>
+
     </div>
 </div>
 
@@ -90,4 +92,10 @@
     </div>
 <% end %>
 </body>
+<footer >
+  <div id="footer">
+
+  </div>
+
+</footer>
 </html>
