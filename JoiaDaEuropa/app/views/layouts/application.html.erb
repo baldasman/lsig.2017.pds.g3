@@ -63,15 +63,17 @@
         <div class="<%= current_user.nil? ? 'hidden' : 'col-md-3' %>">
             <h1>Meu menu</h1>
             <ul>
+
                 <li><%= link_to t('my_account'), profile_index_path %></li>
+
+                <li><%= link_to t('client'), client_area_client_path %></li>
+
             </ul>
-          <ul>
-            <li><%= link_to t('Nova encomenda'), profile_index_path %></li>
-          </ul>
         </div>
         <div class="<%= current_user.nil? ? 'col-md-12' : 'col-md-9' %>">
             <%= yield %>
         </div>
+
     </div>
 </div>
 
@@ -102,4 +104,23 @@
 </footer>
 
 </body>
+
+<footer >
+
+  <div id="footer">
+    <div class="col-md-4">
+     <h5 class="text-left">&copy; Created by: PDS_G3</h5>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="text-center">Jóia da Europa Unipessoal, Lda.</h5>
+    </div>
+
+    <div class="col-md-4">
+      <h5 class="text-right">Contact information: <a href="mailto:joiadaeuropa@joiadaeuropa.com">
+        Joia da Europa Email</a></h5>
+    </div>
+  </div>
+
+</footer>
 </html>

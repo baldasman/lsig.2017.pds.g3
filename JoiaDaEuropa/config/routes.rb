@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   root to: 'home#mission'
   get '/home/index'
   root to: 'home#index'
+  get '/client_area/client'
+  root to: 'client_area#client'
 end

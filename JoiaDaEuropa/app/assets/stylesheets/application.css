@@ -14,7 +14,7 @@
  *= require_self
  */
 
-.header {
+header {
     background-image:url("joiaeuropa.png");
     background-position: center;
     background-size: cover;
@@ -23,3 +23,9 @@
     padding: 10px;
 }
 
+footer{
+    width: 100%;
+    height: 40px;
+    background-color: #CCCCCC;
+    padding: 5px;
+}
