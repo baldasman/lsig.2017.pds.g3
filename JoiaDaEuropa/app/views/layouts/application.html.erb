@@ -12,10 +12,11 @@
 
   <body>
     <header class="header" >
-      <div id="header">
-        <!--<img src="<%= asset_path 'joiaeuropa.png' %>" alt="" id="headerimage">-->
+      <!--<div id="header">-->
+        <!--<img src="<%= asset_path 'joiaeuropa.png' %>">-->
+
         <p>
-       <div class="col-md-12">
+        <div class="pull-right" >
         <% if current_user %>
           <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
         <% else %>
@@ -23,14 +24,40 @@
         <% end %>
         </div>
 
-      <div class="col-md-3">
+
+      <div class="pull-left" >
         <%= link_to 'PT', '/?lang=pt' %>
         <span>|</span>
         <%= link_to 'EN', '/?lang=en' %>
       </div>
-        </p>
+    </p>
       </div>
     </header>
+
+    <!-- menu -->
+    <nav class="navbar navbar-default ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><b>Página Inicial</b></a></li>
+            <li><a href="#home"><b>História</b></a></li>
+            <li><a href="#band">Missão</a></li>
+            <li><a href="#tour">Notícias</a></li>
+            <li><a href="#contact">Contactos</a></li>
+
+            </li>
+
+        </div>
+      </div>
+    </nav>
+
 
     <%= yield %>
 
