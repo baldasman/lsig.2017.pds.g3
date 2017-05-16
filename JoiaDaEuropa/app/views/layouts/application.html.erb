@@ -65,6 +65,9 @@
             <ul>
                 <li><%= link_to t('my_account'), profile_index_path %></li>
             </ul>
+          <ul>
+            <li><%= link_to t('Nova encomenda'), profile_index_path %></li>
+          </ul>
         </div>
         <div class="<%= current_user.nil? ? 'col-md-12' : 'col-md-9' %>">
             <%= yield %>
