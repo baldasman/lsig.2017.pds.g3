@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20170516111458) do
     t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "order_id"
+    t.index ["order_id"], name: "index_attachments_on_order_id", using: :btree
   end
 
   create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(version: 20170516111458) do
     t.string   "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "order_id"
+    t.index ["order_id"], name: "index_comments_on_order_id", using: :btree
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -44,6 +48,8 @@ ActiveRecord::Schema.define(version: 20170516111458) do
     t.decimal  "price",         precision: 10
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
   create_table "states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -51,6 +57,8 @@ ActiveRecord::Schema.define(version: 20170516111458) do
     t.string   "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "order_id"
+    t.index ["order_id"], name: "index_states_on_order_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -66,7 +74,9 @@ ActiveRecord::Schema.define(version: 20170516111458) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.integer  "client_id"
     t.boolean  "is_client",              default: true
+    t.index ["client_id"], name: "index_users_on_client_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
