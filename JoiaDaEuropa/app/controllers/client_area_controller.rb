@@ -8,5 +8,9 @@ class ClientAreaController < ApplicationController
 
   end
 
+  def order
+    
+  end
+
 
 end
