@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516111458) do
+ActiveRecord::Schema.define(version: 20170517102518) do
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20170516111458) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
+    t.integer  "state_id"
+    t.index ["state_id"], name: "index_orders_on_state_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
@@ -57,8 +59,6 @@ ActiveRecord::Schema.define(version: 20170516111458) do
     t.string   "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "order_id"
-    t.index ["order_id"], name: "index_states_on_order_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(version: 20170516111458) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.boolean  "is_client",              default: true
     t.integer  "client_id"
+    t.boolean  "is_client",              default: true
     t.index ["client_id"], name: "index_users_on_client_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

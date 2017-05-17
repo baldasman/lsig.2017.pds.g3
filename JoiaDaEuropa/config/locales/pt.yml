@@ -22,3 +22,7 @@
 "pt-PT":
   hello: "Hello world"
   my_account: "A minha conta"
+  states:
+    pending: "Pendente"
+    concluded: "Concluída"
+    cancelled: "Cancelada"
