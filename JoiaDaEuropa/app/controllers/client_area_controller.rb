@@ -12,7 +12,7 @@ class ClientAreaController < ApplicationController
 
   def save_order
 
-    _order = params[:orders]
+    _order = params[:order]
 
     @order = Order.new
 
@@ -21,7 +21,7 @@ class ClientAreaController < ApplicationController
     @order.delivery_date = _order[:delivery_date]
 
     if @order.save
-      redirect_to backoffice_index_path
+      redirect_to client_area_view_order_path
     else
       redirect_to client_area_create_new_order_path
     end

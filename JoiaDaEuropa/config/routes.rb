@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   get '/client_area/create_new_order'
   root to: 'client_area#create_new_order'
   post '/client_area/save_order'
+  get '/client_area/index'
+  get '/client_area/view_order'
 
 end

@@ -1,5 +1,8 @@
 <div class="container-fluid">
-  <%= form_for @order, url: {action: "save_order"} do |f| %>
+
+  <h1>New Order</h1>
+
+  <%= form_for @order, url: {action: 'save_order'} do |f| %>
 
       <p>
         <%= f.label :name %>
@@ -21,17 +24,14 @@
           </div>
         </div>
       </div>
-
-      </div>
       </p>
 
       <%= f.submit 'save_order' %>
   <% end %>
-  </div>
-  </div>
+</div>
 
-  <script type="text/javascript">
-      $(function () {
-          $('#datetimepicker4').datetimepicker();
-      });
-  </script>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker4').datetimepicker();
+    });
+</script>
