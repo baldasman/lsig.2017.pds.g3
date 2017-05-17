@@ -17,27 +17,20 @@ ActiveRecord::Schema.define(version: 20170517102518) do
     t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< Updated upstream
     t.integer  "order_id"
     t.index ["order_id"], name: "index_attachments_on_order_id", using: :btree
-=======
-    t.integer  "orders_id"
-    t.index ["orders_id"], name: "index_attachments_on_orders_id", using: :btree
->>>>>>> Stashed changes
   end
 
   create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.text     "address",     limit: 65535
-    t.string   "locality"
+    t.string   "city"
     t.string   "email"
     t.integer  "nif"
     t.text     "postal_code", limit: 65535
     t.integer  "contact"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.integer  "users_id"
-    t.index ["users_id"], name: "index_clients_on_users_id", using: :btree
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -45,15 +38,8 @@ ActiveRecord::Schema.define(version: 20170517102518) do
     t.string   "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< Updated upstream
     t.integer  "order_id"
     t.index ["order_id"], name: "index_comments_on_order_id", using: :btree
-=======
-    t.integer  "orders_id"
-    t.integer  "users_id"
-    t.index ["orders_id"], name: "index_comments_on_orders_id", using: :btree
-    t.index ["users_id"], name: "index_comments_on_users_id", using: :btree
->>>>>>> Stashed changes
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -62,21 +48,8 @@ ActiveRecord::Schema.define(version: 20170517102518) do
     t.decimal  "price",         precision: 10
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-<<<<<<< Updated upstream
     t.integer  "user_id"
-    t.integer  "state_id"
-    t.index ["state_id"], name: "index_orders_on_state_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
-=======
-    t.integer  "comments_id"
-    t.integer  "attachment_id"
-    t.integer  "states_id"
-    t.integer  "clients_id"
-    t.index ["attachment_id"], name: "index_orders_on_attachment_id", using: :btree
-    t.index ["clients_id"], name: "index_orders_on_clients_id", using: :btree
-    t.index ["comments_id"], name: "index_orders_on_comments_id", using: :btree
-    t.index ["states_id"], name: "index_orders_on_states_id", using: :btree
->>>>>>> Stashed changes
   end
 
   create_table "states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -84,8 +57,8 @@ ActiveRecord::Schema.define(version: 20170517102518) do
     t.string   "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "orders_id"
-    t.index ["orders_id"], name: "index_states_on_orders_id", using: :btree
+    t.integer  "order_id"
+    t.index ["order_id"], name: "index_states_on_order_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -101,8 +74,8 @@ ActiveRecord::Schema.define(version: 20170517102518) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.integer  "client_id"
     t.boolean  "is_client",              default: true
+    t.integer  "client_id"
     t.index ["client_id"], name: "index_users_on_client_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

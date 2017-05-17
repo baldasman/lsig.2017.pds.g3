@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get '/profile/index'
+  get '/profile/profile'
   root to: 'home#index'
   get '/backoffice/index'
   root to: 'backoffice#index'
@@ -18,9 +18,7 @@ Rails.application.routes.draw do
   get '/home/index'
   root to: 'home#index'
   get '/client_area/create_new_order'
-<<<<<<< Updated upstream
   root to: 'client_area#create_new_order'
-=======
-  root to: 'client_are#create_new_order'
->>>>>>> Stashed changes
+  post '/client_area/save_order'
+
 end
