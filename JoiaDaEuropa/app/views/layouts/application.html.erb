@@ -17,7 +17,11 @@
 
         <div class="pull-right">
             <% if current_user %>
+<<<<<<< Updated upstream
                 <div>Menu do Utilizador</div>
+=======
+
+>>>>>>> Stashed changes
                 <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
             <% else %>
                 <%= link_to 'Sign In', new_user_session_path %>
@@ -58,7 +62,24 @@
     </div>
 </nav>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
+<<<<<<< Updated upstream
     <div class="row">
         <div class="<%= current_user.nil? ? 'hidden' : 'col-md-2' %>">
             <h1>My Menu</h1>
@@ -74,7 +95,36 @@
             <%= yield %>
         </div>
 
+=======
+  <div class="aside">
+    <div class="<%= current_user.nil? ? 'hidden' : 'col-md-3' %>">
+
+                                                                   <% if current_user.is_client %>
+          <h1>My Menu</h1>
+          <nav>
+            <ul>
+              <li><b><%= link_to t('Create new order'),client_area_create_new_order_path %></b></li>
+            </ul>
+          </nav>
+                                                                   <% else %>
+          <h1>Admin Menu</h1>
+          <nav>
+            <ul>
+              <li><b><%= link_to t('Administrate'),client_area_create_new_order_path %></b></li>
+            </ul>
+          </nav>
+                                                                   <% end %>
+
+
+
     </div>
+
+
+    <div class="<%= current_user.nil? ? 'col-md-12' : 'col-md-9' %>">
+      <%= yield %>
+>>>>>>> Stashed changes
+    </div>
+  </div>
 </div>
 
 <% if notice %>

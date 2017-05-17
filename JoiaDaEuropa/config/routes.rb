@@ -18,5 +18,9 @@ Rails.application.routes.draw do
   get '/home/index'
   root to: 'home#index'
   get '/client_area/create_new_order'
+<<<<<<< Updated upstream
   root to: 'client_area#create_new_order'
+=======
+  root to: 'client_are#create_new_order'
+>>>>>>> Stashed changes
 end
