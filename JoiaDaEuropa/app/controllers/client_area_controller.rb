@@ -30,7 +30,8 @@ class ClientAreaController < ApplicationController
 
   def view_order
 
-  @order = Order.all
+    @order = Order.all
 
   end
 end
+
