@@ -26,4 +26,9 @@ class ClientAreaController < ApplicationController
       redirect_to client_area_create_new_order_path
     end
   end
+
+
+  def view_order
+
+  end
 end
