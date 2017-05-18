@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   get '/client_area/index'
   get '/client_area/view_order'
 
+
+
 end
