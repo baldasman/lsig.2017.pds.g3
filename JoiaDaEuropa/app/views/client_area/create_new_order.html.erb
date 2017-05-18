@@ -1,3 +1,38 @@
-<h3>
-  Nova Encomenda
-</h3>
+<div class="container-fluid">
+
+  <h1>New Order</h1>
+
+  <%= form_for @order, url: {action: 'save_order'} do |f| %>
+
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+
+
+      <p>
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+      </p>
+
+      <p>
+        <%= f.label :delivery_date %>
+      <div class="container">
+        <div class="row">
+          <div class='col-sm-6'>
+            <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today, :class => 'input-group date form-control' %>
+          </div>
+        </div>
+      </div>
+      </p>
+
+      <%= f.submit 'save_order' %>
+
+  <% end %>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker4').datetimepicker();
+    });
+</script>
