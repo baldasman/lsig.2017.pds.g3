@@ -1,2 +1,15 @@
-<h1>Order #<%= @order.id %></h1>
-<h3><%= @order.name %></h3>
+<div class="col-md-2"></div>
+<div class="col-md-10">
+<h1>Oder Details</h1>
+
+<ul>
+
+  <li><h4><b>ID#<%= @order.id %></b></h4></li>
+
+  <li><h5>Name - <%= @order.name %></h5></li>
+
+  <li><h5>Price - <%= @order.price  %>€</h5></li>
+
+  <li><h5>Delivery Date - <%= @order.delivery_date %></h5></ul>
+</ul>
+</div>

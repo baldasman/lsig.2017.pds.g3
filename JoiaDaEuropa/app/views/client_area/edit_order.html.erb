@@ -6,14 +6,23 @@
         <%= f.hidden_field :id %>
 
         <p>
-            <%= f.label :name %>
-            <%= f.text_field :name %>
+          <%= f.label :order_name %>
+          <%= f.text_field :name %>
+          <% if flash[:errors] && flash[:errors]['name'] %>
+          <div class="panel panel-danger">
+            <ul>
+              <% flash[:errors]['name'].each do |error| %>
+                  <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
         </p>
 
 
         <p>
             <%= f.label :price %>
-            <%= f.text_field :price %>
+            <%= f.text_field :price %>€
             <% if flash[:errors] && flash[:errors]['price'] %>
             <div class="panel panel-danger">
                 <ul>
@@ -30,8 +39,7 @@
         <div class="container">
             <div class="row">
                 <div class='col-sm-6'>
-                    <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %>
-
+                  <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %>
                 </div>
             </div>
         </div>
@@ -39,7 +47,7 @@
 
         <p>
         <div class="attachments">
-            <label classe="chooseattachment">Select attachment:</label>
+            <label class="chooseattachment">Select attachment:</label>
             <input type="file" class="file">
 
         </div>

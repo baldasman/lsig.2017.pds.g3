@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     get '/client_area/view_order'
     get '/client_area/show_order/:id', to: 'client_area#show_order', as: 'show_order'
     get '/client_area/edit_order/:id', to: 'client_area#edit_order', as: 'edit_order'
+    get '/client_area/destroy_order/:id', to: 'client_area#destroy_order', as: 'destroy_order'
 
     root to: 'home#index'
 
