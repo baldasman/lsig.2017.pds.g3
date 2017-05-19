@@ -77,7 +77,7 @@
     <% @concluded_orders.each do |order| %>
         <tr>
 
-          <td><%= h order.id %></td>
+          <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
           <td><%= h order.name %></td>
           <td><%= h order.delivery_date %></td>
 
@@ -102,7 +102,7 @@
       <% @cancelled_orders.each do |order| %>
           <tr>
 
-            <td><%= h order.id %></td>
+            <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
             <td><%= h order.name %></td>
             <td><%= h order.delivery_date %></td>
 
