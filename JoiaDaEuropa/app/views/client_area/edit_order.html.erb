@@ -1,0 +1,57 @@
+<div class="container-fluid">
+
+    <h1>New Order</h1>
+
+    <%= form_for @order, url: {action: 'save_order'}, method: :post do |f| %>
+        <%= f.hidden_field :id %>
+
+        <p>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </p>
+
+
+        <p>
+            <%= f.label :price %>
+            <%= f.text_field :price %>
+            <% if flash[:errors] && flash[:errors]['price'] %>
+            <div class="panel panel-danger">
+                <ul>
+                    <% flash[:errors]['price'].each do |error| %>
+                        <li><%= error %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        </p>
+
+        <p>
+            <%= f.label :delivery_date %>
+        <div class="container">
+            <div class="row">
+                <div class='col-sm-6'>
+                    <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %>
+
+                </div>
+            </div>
+        </div>
+        </p>
+
+        <p>
+        <div class="attachments">
+            <label classe="chooseattachment">Select attachment:</label>
+            <input type="file" class="file">
+
+        </div>
+        </p>
+
+        <%= f.submit 'save_order' %>
+
+    <% end %>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#delivery_date').datetimepicker({format: 'DD-MM-YYYY'});
+    });
+</script>

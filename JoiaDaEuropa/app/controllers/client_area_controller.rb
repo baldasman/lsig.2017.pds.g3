@@ -14,7 +14,11 @@ class ClientAreaController < ApplicationController
 
         _order = params[:order]
 
-        @order = Order.new user_id: current_user.id, state_id: 1
+        if _order[:id].nil?
+            @order = Order.new user_id: current_user.id, state_id: 1
+        else
+            @order = Order.find_by(id: _order[:id])
+        end
 
         @order.name = _order[:name]
         @order.price = _order[:price]
@@ -35,5 +39,18 @@ class ClientAreaController < ApplicationController
         @pending_orders = Order.all.where(state_id: 1)
 
     end
+
+    def show_order
+
+        @order = Order.find_by(id: params[:id])
+
+    end
+
+    def edit_order
+
+        @order = Order.find_by(id: params[:id])
+
+    end
+
 end
 
