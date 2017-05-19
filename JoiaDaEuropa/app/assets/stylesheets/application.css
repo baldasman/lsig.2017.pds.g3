@@ -35,3 +35,9 @@ footer{
 #space{
     min-height: 100px;
 }
+
+#login{
+    color: black;
+    font-size: larger;
+
+}

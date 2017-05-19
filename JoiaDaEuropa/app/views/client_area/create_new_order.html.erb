@@ -21,8 +21,8 @@
 
 
       <p>
-        <%= f.label :price %>
-        <%= f.text_field :price %>
+        <%= f.label :order_price %>
+        <%= f.text_field :price %>€
         <% if flash[:errors] && flash[:errors]['price'] %>
           <div class="panel panel-danger">
             <ul>
@@ -44,25 +44,25 @@
         </div>
       </div>
 
-  </p>
+      </p>
 
-  <p>
-  <div class="attachments">
-    <label classe="chooseattachment">Select attachment:</label>
-    <input type="file" class="file">
+      <p>
+      <div class="attachments">
+        <label classe="chooseattachment">Select attachment:</label>
+        <input type="file" class="file">
 
-  </div>
-  </p>
+      </div>
+      </p>
 
-  <%= f.submit 'save_order' %>
+      <%= f.submit 'save_order' %>
 
 
   <% end %>
 
-  </div>
+</div>
 
-  <script type="text/javascript">
-      $(function () {
-          $('#delivery_date').datetimepicker({format: 'DD-MM-YYYY'});
-      });
-  </script>
+<script type="text/javascript">
+    $(function () {
+        $('#delivery_date').datetimepicker({format: 'DD-MM-YYYY'});
+    });
+</script>

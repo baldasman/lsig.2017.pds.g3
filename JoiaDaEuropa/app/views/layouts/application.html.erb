@@ -15,11 +15,12 @@
   <div id="header">
     <!--<img src="<%= asset_path 'joiaeuropa.png' %>">-->
 
-    <div class="pull-right">
+    <div class="pull-right" id="login">
       <% if current_user %>
-          <div>User Menu</div>
+          <div><b>Private</b></div>
           <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
       <% else %>
+          <div><b>Public</b></div>
           <%= link_to 'Sign In', new_user_session_path %>
       <% end %>
     </div>

@@ -53,5 +53,12 @@ class ClientAreaController < ApplicationController
 
     end
 
+  def destroy_order
+
+          @order = Order.find_by(id: params[:id])
+          @order = Order.destroy
+
+  end
+
 end
 

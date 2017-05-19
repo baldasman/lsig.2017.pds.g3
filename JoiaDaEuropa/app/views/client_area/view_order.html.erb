@@ -18,9 +18,9 @@
       <tr>
 
         <th>ID</th>
-        <th>Name</th>
-        <th>Delivery Date</th>
+        <th>Order Name</th>
         <th>Price</th>
+        <th>Delivery Date</th>
         <th>State</th>
 
       </tr>
@@ -29,10 +29,10 @@
 
           <tr>
 
-            <td><%= h order.id %></td>
+            <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
             <td><%= h order.name %></td>
+            <td><%= h order.price %>€</td>
             <td><%= h order.delivery_date %></td>
-            <td><%= h order.price %></td>
             <td><%= h order.state.description %></td>
 
           </tr>
@@ -46,7 +46,8 @@
       <tr>
 
         <th>ID</th>
-        <th>Name</th>
+        <th>Order Name</th>
+        <th>Price</th>
         <th>Delivery Date</th>
         <th></th>
 
@@ -56,8 +57,11 @@
 
             <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
             <td><%= h order.name %></td>
+            <td><%= h order.price %>€</td>
             <td><%= h order.delivery_date %></td>
-            <td><%= link_to 'Editar', edit_order_path(order.id), class: 'btn btn-default' %></td>
+            <td><%= link_to 'Edit', edit_order_path(order.id), class: 'btn btn-default' %></td>
+            <td><%= link_to 'Delete', destroy_order_path(order.id), class: 'btn btn-default', method: :delete, data: {confirm: 'Are you sure?'} %></td>
+
       <% end %>
       </tr>
 
@@ -69,7 +73,8 @@
     <tr>
 
       <th>ID</th>
-      <th>Name</th>
+      <th>Order Name</th>
+      <th>Price</th>
       <th>Delivery Date</th>
       <th></th>
 
@@ -79,6 +84,7 @@
 
           <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
           <td><%= h order.name %></td>
+          <td><%= h order.price %>€</td>
           <td><%= h order.delivery_date %></td>
 
     <% end %>
@@ -93,7 +99,8 @@
       <tr>
 
         <th>ID</th>
-        <th>Name</th>
+        <th>Order Name</th>
+        <th>Price</th>
         <th>Delivery Date</th>
         <th></th>
 
@@ -104,6 +111,7 @@
 
             <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
             <td><%= h order.name %></td>
+            <td><%= h order.price %>€</td>
             <td><%= h order.delivery_date %></td>
 
       <% end %>
