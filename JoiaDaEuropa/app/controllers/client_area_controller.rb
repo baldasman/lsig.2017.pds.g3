@@ -37,7 +37,8 @@ class ClientAreaController < ApplicationController
 
         @order = Order.all
         @pending_orders = Order.all.where(state_id: 1)
-
+        @concluded_orders = Order.all.where(state_id: 2)
+        @cancelled_orders = Order.all.where(state_id: 3)
     end
 
     def show_order
