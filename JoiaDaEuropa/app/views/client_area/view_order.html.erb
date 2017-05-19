@@ -57,7 +57,7 @@
             <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
             <td><%= h order.name %></td>
             <td><%= h order.delivery_date %></td>
-              <td><%= link_to 'Editar', edit_order_path(order.id), class: 'btn btn-default' %></td>
+            <td><%= link_to 'Editar', edit_order_path(order.id), class: 'btn btn-default' %></td>
       <% end %>
       </tr>
 
