@@ -5,23 +5,33 @@
   <%= form_for @order, url: {action: 'save_order'} do |f| %>
 
       <p>
-        <%= f.label :name %>
+        <%= f.label :order_name %>
         <%= f.text_field :name %>
+        <% if flash[:errors] && flash[:errors]['name'] %>
+          <div class="panel panel-danger">
+            <ul>
+              <% flash[:errors]['name'].each do |error| %>
+                  <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
       </p>
 
 
       <p>
         <%= f.label :price %>
         <%= f.text_field :price %>
-          <% if flash[:errors] && flash[:errors]['price'] %>
+        <% if flash[:errors] && flash[:errors]['price'] %>
           <div class="panel panel-danger">
-              <ul>
-                  <% flash[:errors]['price'].each do |error| %>
+            <ul>
+              <% flash[:errors]['price'].each do |error| %>
                   <li><%= error %></li>
-                  <% end %>
-              </ul>
+              <% end %>
+            </ul>
           </div>
-          <% end %>
+      <% end %>
       </p>
 
       <p>
@@ -30,23 +40,32 @@
         <div class="row">
           <div class='col-sm-6'>
             <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %>
-
+            <% if flash[:errors] && flash[:errors]['delivery_date'] %>
+            <div class="panel panel-danger">
+              <ul>
+                <% flash[:errors]['delivery_date'].each do |error| %>
+                    <li><%= error %></li>
+                <% end %>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+            <% end %>
       </p>
 
       <p>
-        <div class="attachments">
-          <label classe="chooseattachment">Select attachment:</label>
-          <input type="file" class="file">
+      <div class="attachments">
+        <label classe="chooseattachment">Select attachment:</label>
+        <input type="file" class="file">
 
-        </div>
+      </div>
       </p>
 
       <%= f.submit 'save_order' %>
 
   <% end %>
+
 </div>
 
 <script type="text/javascript">
