@@ -33,7 +33,7 @@
             <td><%= h order.name %></td>
             <td><%= h order.delivery_date %></td>
             <td><%= h order.price %></td>
-            <td><%= h order.state_id %></td>
+            <td><%= h order.state.description %></td>
 
           </tr>
       <% end %>
@@ -50,7 +50,7 @@
         <th>Delivery Date</th>
 
       </tr>
-      <% @order.each do |order| %>
+      <% @pending_orders.each do |order| %>
           <tr>
 
             <td><%= h order.id %></td>

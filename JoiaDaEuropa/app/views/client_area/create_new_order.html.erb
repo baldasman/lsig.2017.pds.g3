@@ -13,6 +13,15 @@
       <p>
         <%= f.label :price %>
         <%= f.text_field :price %>
+          <% if flash[:errors] && flash[:errors]['price'] %>
+          <div class="panel panel-danger">
+              <ul>
+                  <% flash[:errors]['price'].each do |error| %>
+                  <li><%= error %></li>
+                  <% end %>
+              </ul>
+          </div>
+          <% end %>
       </p>
 
       <p>
@@ -20,7 +29,8 @@
       <div class="container">
         <div class="row">
           <div class='col-sm-6'>
-            <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today, :class => 'input-group date form-control' %>
+            <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %>
+
           </div>
         </div>
       </div>
@@ -41,6 +51,6 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#datetimepicker4').datetimepicker();
+        $('#delivery_date').datetimepicker({format: 'DD-MM-YYYY'});
     });
 </script>
