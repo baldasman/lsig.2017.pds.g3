@@ -20,10 +20,64 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  my_account: "My account"
-  email: "O meu email"
-  states:
-    pending: "Pending"
-    concluded: "Concluded"
-    cancelled: "Cancelled"
+    hello: "Hello world"
+    my_account: "My account"
+    states:
+      pending: "Pending"
+      concluded: "Concluded"
+      cancelled: "Cancelled"
+    save: "Save"
+    cancel: "Cancel"
+    delete: "Delete"
+
+    about_us_title: "About us"
+    mission_title: "Our mission"
+    História: "In 2006, year of new opportunities and challenges, António Bento Da Costa Ferreira begins on he's own, creating the
+               company Jóia Da Europa, which fully dedicates itself to footwear production.
+                         Jóia da Europa, is one of the national and international success stories, since the innovation and quality of
+               its products is difficult to find. Slowly, each year this company has been growing, and it doesn't reject any challenges
+               comming it's direction. To this company everything is possible.
+                         Through the years, Jóia da Europa has been betting in technology, both in machinary and software, which means that
+               there is a very small margin of error, wich allows the company to answer to all the demands in the due time.
+                         The quality of our services comes from the value of our raw materials selected for our production. At all times,
+               our customers can count on a complete and different collection.
+                         If you're looking for quality, inovation, transformation, product differentiation, come meet our company, because
+               here you will find everything you need."
+    mission: "A company doesn't define itself by their name, it defines itself by the hard work and effort off all the people
+              who are apart of it, the human resources, suppliers, clients and all the collaborators are necessary for the success of any
+              company, and Jóia da Europa counts with everyone's help.
+                       Our mission focuses on:
+                    -Meet the necessities of all our clients, allways perfecting our products and services.
+                    -Supply products with such a quality that makes our clients feel satisfied, benefiting our employees and business
+              partners with our success.
+                    -Offer solutions to any idea, counting on our assistance.
+                    -Allways betting on innovative ideas."
+    contacts: "Contacts"
+    name: "Name"
+    comentaries: "Comentaries"
+    send: "Send"
+    news: "News"
+    profile: "Profile"
+    my_orders: "My orders"
+    sign_out: "Sign out"
+    account: "Account"
+    new_order: "New order"
+    view_order: "View order"
+    price: "Price"
+    delivery_date: "Delivery date"
+    chooseattachment: "Select attachment"
+    browse: "Browse"
+    save_order: "Save order"
+
+
+    edit: "Edit"
+    welcome!: "Welcome !"
+    milan's_fair: "Milan's fair"
+    new_collection: "New collection"
+    new_partnership: "New partnership"
+    see_details: "See details"
+    message: "Message"
+    phone: "Phone"
+    remember_me: "Remember password"
+    forgot_your_password: "Forgot your password"
+    my_account: "My account"

@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
 
   <h1>New Order</h1>
@@ -5,13 +6,13 @@
   <%= form_for @order, url: {action: 'save_order'} do |f| %>
 
       <p>
-        <%= f.label :name %>
+        <%= f.label t(:name) %>
         <%= f.text_field :name %>
       </p>
 
 
       <p>
-        <%= f.label :price %>
+        <%= f.label t(:price) %>
         <%= f.text_field :price %>
           <% if flash[:errors] && flash[:errors]['price'] %>
           <div class="panel panel-danger">
@@ -25,7 +26,7 @@
       </p>
 
       <p>
-        <%= f.label :delivery_date %>
+        <%= f.label t(:delivery_date) %>
       <div class="container">
         <div class="row">
           <div class='col-sm-6'>
@@ -38,13 +39,13 @@
 
       <p>
         <div class="attachments">
-          <label classe="chooseattachment">Select attachment:</label>
+          <label classe="chooseattachment"><%= t('chooseattachment')%></label>
           <input type="file" class="file">
 
         </div>
       </p>
 
-      <%= f.submit 'save_order' %>
+      <%= f.submit t('save_order') %>
 
   <% end %>
 </div>
