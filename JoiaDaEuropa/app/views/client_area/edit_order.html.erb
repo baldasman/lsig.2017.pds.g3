@@ -9,7 +9,7 @@
           <%= f.label :order_name %>
           <%= f.text_field :name %>
           <% if flash[:errors] && flash[:errors]['name'] %>
-          <div class="panel panel-danger">
+          <div class="panel panel-danger" id="error">
             <ul>
               <% flash[:errors]['name'].each do |error| %>
                   <li><%= error %></li>
@@ -24,7 +24,7 @@
             <%= f.label :price %>
             <%= f.text_field :price %>€
             <% if flash[:errors] && flash[:errors]['price'] %>
-            <div class="panel panel-danger">
+            <div class="panel panel-danger" id="error">
                 <ul>
                     <% flash[:errors]['price'].each do |error| %>
                         <li><%= error %></li>

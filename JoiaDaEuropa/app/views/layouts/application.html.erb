@@ -61,7 +61,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="<%= current_user.nil? ? 'hidden' : 'col-md-2' %>">
+    <div class="<%= current_user.nil? ? 'hidden' : 'col-md-2'  %>">
       <h1>My Menu</h1>
       <ul>
 
@@ -69,11 +69,11 @@
 
         <li><%= link_to t('new_order'), client_area_create_new_order_path %></li>
 
-        <li><%= link_to t('View_order'), client_area_view_order_path %></li>
+        <li><%= link_to t('view_order'), client_area_view_order_path %></li>
 
       </ul>
     </div>
-    <div class="<%= current_user.nil? ? 'col-md-12' : 'col-md-8' %>">
+    <div class="<% current_user.nil? ? 'col-md-2' : 'col-md-8' %>">
       <%= yield %>
     </div>
 
