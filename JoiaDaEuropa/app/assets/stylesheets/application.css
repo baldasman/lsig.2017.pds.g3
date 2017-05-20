@@ -39,5 +39,12 @@ footer{
 #login{
     color: black;
     font-size: larger;
-
 }
+
+#error{
+    font-weight: bold;
+    color:red;
+    font-variant: all-small-caps;
+    font-size: medium;
+}
+

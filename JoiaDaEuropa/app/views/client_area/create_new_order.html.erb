@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid col-md-10">
 
   <h1>New Order</h1>
 
@@ -8,7 +8,7 @@
         <%= f.label :order_name %>
         <%= f.text_field :name %>
         <% if flash[:errors] && flash[:errors]['name'] %>
-          <div class="panel panel-danger">
+          <div class="panel panel-danger" id="error">
             <ul>
               <% flash[:errors]['name'].each do |error| %>
                   <li><%= error %></li>
@@ -24,7 +24,7 @@
         <%= f.label :order_price %>
         <%= f.text_field :price %>€
         <% if flash[:errors] && flash[:errors]['price'] %>
-          <div class="panel panel-danger">
+          <div class="panel panel-danger" id="error">
             <ul>
               <% flash[:errors]['price'].each do |error| %>
                   <li><%= error %></li>
@@ -38,7 +38,7 @@
         <%= f.label :delivery_date %>
       <div class="container">
         <div class="row">
-          <div class='col-sm-6'>
+          <div class='col-md-2'>
             <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %>
           </div>
         </div>
