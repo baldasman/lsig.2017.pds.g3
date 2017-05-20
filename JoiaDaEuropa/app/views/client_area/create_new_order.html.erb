@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid col-md-10">
 
   <h1>New Order</h1>
 
@@ -38,7 +38,7 @@
         <%= f.label :delivery_date %>
       <div class="container">
         <div class="row">
-          <div class='col-sm-6'>
+          <div class='col-md-2'>
             <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %>
           </div>
         </div>
