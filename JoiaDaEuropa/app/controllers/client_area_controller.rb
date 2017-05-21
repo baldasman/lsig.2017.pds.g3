@@ -24,6 +24,7 @@ class ClientAreaController < ApplicationController
         @order.price = _order[:price]
         @order.delivery_date = _order[:delivery_date]
 
+
         # upload file
         _uploaded = params[:order][:attachment]
         _filename = SecureRandom.hex + '_' + _uploaded.original_filename
