@@ -81,3 +81,20 @@ en:
     remember_me: "Remember password"
     forgot_your_password: "Forgot your password"
     my_account: "My account"
+    order.name: "Order name"
+    state.description: "State"
+    order.price: "Order price"
+    order.delivery_date: "Delivery date"
+
+    order_name: "Order name"
+    order_price: "Order price"
+
+    bemvindo: "Welcome !"
+    introduçao: "Jóia da Europa is a company which dedicates itself interily to the production of high quality and confort of footwear."
+
+    missao: "Mission"
+
+    homepage: "Homepage"
+    about_us: "About us"
+    news: "News"
+    contacts: "Contacts"

@@ -30,10 +30,10 @@
           <tr>
 
             <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
-            <td><%= h order.name %></td>
-            <td><%= h order.price %>€</td>
-            <td><%= h order.delivery_date %></td>
-            <td><%= h order.state.description %></td>
+            <td><%= h order.t(name) %></td>
+            <td><%= h order.t(price) %>€</td>
+            <td><%= h order.t(delivery_date) %></td>
+            <td><%= h order.t(state.description) %></td>
 
           </tr>
       <% end %>
@@ -56,9 +56,9 @@
           <tr>
 
             <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
-            <td><%= h order.name %></td>
-            <td><%= h order.price %>€</td>
-            <td><%= h order.delivery_date %></td>
+            <td><%= h t('order.name') %></td>
+            <td><%= h t('order.price') %>€</td>
+            <td><%= h t('order.delivery_date') %></td>
             <td><%= link_to 'Edit', edit_order_path(order.id), class: 'btn btn-default' %></td>
             <td><%= link_to 'Delete', destroy_order_path(order.id), class: 'btn btn-default', method: :delete, data: {confirm: 'Are you sure?'} %></td>
 
@@ -83,9 +83,9 @@
         <tr>
 
           <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
-          <td><%= h order.name %></td>
-          <td><%= h order.price %>€</td>
-          <td><%= h order.delivery_date %></td>
+          <td><%= h t('order.name') %></td>
+          <td><%= h t('order.price') %>€</td>
+          <td><%= h t('order.delivery_date') %></td>
 
     <% end %>
     </tr>
@@ -110,9 +110,9 @@
           <tr>
 
             <td><%= link_to sprintf('#%s', order.id), show_order_path(order.id) %></td>
-            <td><%= h order.name %></td>
-            <td><%= h order.price %>€</td>
-            <td><%= h order.delivery_date %></td>
+            <td><%= h t('order.name') %></td>
+            <td><%= h t('order.price') %>€</td>
+            <td><%= h t('order.delivery_date') %></td>
 
       <% end %>
       </tr>
