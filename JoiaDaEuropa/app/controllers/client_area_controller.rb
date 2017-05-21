@@ -24,6 +24,17 @@ class ClientAreaController < ApplicationController
         @order.price = _order[:price]
         @order.delivery_date = _order[:delivery_date]
 
+
+        # upload file
+        _uploaded = params[:order][:attachment]
+        _filename = SecureRandom.hex + '_' + _uploaded.original_filename
+
+        @order.attachment = Attachment.new path: _filename
+
+        File.open(Rails.root.join('public', 'uploads', _filename), 'wb') do |file|
+            file.write(_uploaded.read)
+        end
+
         if @order.save
             redirect_to client_area_view_order_path
         else

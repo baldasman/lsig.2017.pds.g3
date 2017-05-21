@@ -3,8 +3,9 @@ class CreateAttachments < ActiveRecord::Migration[5.0]
 
 
     create_table :attachments do |t|
-      t.string :name
-      t.string :attachment #guardar o caminho do anexo gravado na encomenda
+      t.binary :type
+      t.string :path
+      t.text :obs
 
       t.timestamps
     end

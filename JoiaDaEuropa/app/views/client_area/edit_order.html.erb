@@ -1,14 +1,14 @@
 <div class="container-fluid col-md-10">
 
-    <h1>New Order</h1>
+  <h1>Edit Order</h1>
 
-    <%= form_for @order, url: {action: 'save_order'}, method: :post do |f| %>
-        <%= f.hidden_field :id %>
+  <%= form_for @order, url: {action: 'save_order'}, method: :post do |f| %>
+      <%= f.hidden_field :id %>
 
-        <p>
-          <%= f.label :order_name %>
-          <%= f.text_field :name %>
-          <% if flash[:errors] && flash[:errors]['name'] %>
+      <p>
+        <%= f.label :order_name %>
+        <%= f.text_field :name %>
+        <% if flash[:errors] && flash[:errors]['name'] %>
           <div class="panel panel-danger" id="error">
             <ul>
               <% flash[:errors]['name'].each do |error| %>
@@ -17,49 +17,46 @@
             </ul>
           </div>
       <% end %>
-        </p>
+      </p>
 
 
-        <p>
-            <%= f.label :price %>
-            <%= f.text_field :price %>€
-            <% if flash[:errors] && flash[:errors]['price'] %>
-            <div class="panel panel-danger" id="error">
-                <ul>
-                    <% flash[:errors]['price'].each do |error| %>
-                        <li><%= error %></li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
-        </p>
+      <p>
+        <%= f.label :price %>
+        <%= f.text_field :price %>€
+        <% if flash[:errors] && flash[:errors]['price'] %>
+          <div class="panel panel-danger" id="error">
+            <ul>
+              <% flash[:errors]['price'].each do |error| %>
+                  <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      </p>
 
-        <p>
-            <%= f.label :delivery_date %>
-        <div class="container">
-            <div class="row">
-                <div class='col-sm-6'>
-                  <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %>
-                </div>
-            </div>
+      <p>
+        <%= f.label :delivery_date %>
+      <div class="container">
+        <div class="row">
+          <div class='col-sm-6'>
+            <%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %>
+          </div>
         </div>
-        </p>
+      </div>
 
-        <p>
-        <div class="attachments">
-            <label class="chooseattachment">Select attachment:</label>
-            <input type="file" class="file">
+      </p>
 
-        </div>
-        </p>
+      <p>
+      <td> <%= f.file_field :attachment %> </td>
+      </p>
 
-        <%= f.submit 'save_order' %>
+      <%= f.submit 'save_order' %>
 
-    <% end %>
-</div>
+  <% end %>
+  </div>
 
-<script type="text/javascript">
-    $(function () {
-        $('#delivery_date').datetimepicker({format: 'DD-MM-YYYY'});
-    });
-</script>
+  <script type="text/javascript">
+      $(function () {
+          $('#delivery_date').datetimepicker({format: 'DD-MM-YYYY'});
+      });
+  </script>

@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 20170517102518) do
     t.integer  "state_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.binary   "type",       limit: 65535
+    t.string   "path"
+    t.text     "obs",        limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -63,6 +68,10 @@ ActiveRecord::Schema.define(version: 20170517102518) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
+    t.integer  "state_id"
+    t.integer  "attachment_id"
+    t.index ["attachment_id"], name: "index_orders_on_attachment_id", using: :btree
+    t.index ["state_id"], name: "index_orders_on_state_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
