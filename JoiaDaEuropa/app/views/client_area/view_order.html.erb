@@ -4,12 +4,12 @@
   }
 </style>
 <div class="col-md-10">
-<h3 class="text-center">Orders</h3>
+<h3 class="text-center"><%= t('orders')%></h3>
 <ul class="nav nav-tabs">
   <li class="active"><a data-toggle="tab" href="#menu1">All</a></li>
-  <li><a data-toggle="tab" href="#menu2">Pending</a></li>
-  <li><a data-toggle="tab" href="#menu3">Concluded</a></li>
-  <li><a data-toggle="tab" href="#menu4">Cancelled</a></li>
+  <li><a data-toggle="tab" href="#menu2"><%=t('pending')%></a></li>
+  <li><a data-toggle="tab" href="#menu3"><%=t('concluded')%></a></li>
+  <li><a data-toggle="tab" href="#menu4"><%=t('cancelled')%></a></li>
 </ul>
 
 <div class="tab-content">
@@ -18,10 +18,10 @@
       <tr>
 
         <th>ID</th>
-        <th>Order Name</th>
-        <th>Price</th>
-        <th>Delivery Date</th>
-        <th>State</th>
+        <th><%= t('order_name') %> </th>
+        <th><%= t('price') %></th>
+        <th><%= t('delivery_date') %></th>
+        <th><%= t('state') %></th>
 
       </tr>
 

@@ -62,7 +62,7 @@
 <div class="container">
   <div class="row">
     <div class="<%= current_user.nil? ? 'hidden' : 'col-md-2'  %>">
-      <h1>My Menu</h1>
+      <h1><%= t('my_menu') %></h1>
       <ul>
 
         <li><%= link_to t('my_account'), profile_profile_path %></li>
@@ -112,7 +112,7 @@
     </div>
 
     <div class="col-md-4">
-      <h5 class="text-right">Contact information: <a href="mailto:joiadaeuropa@joiadaeuropa.com">
+      <h5 class="text-right"><%= t('contact_information') %>: <a href="mailto:joiadaeuropa@joiadaeuropa.com">
         Joia da Europa Email</a></h5>
     </div>
   </div>

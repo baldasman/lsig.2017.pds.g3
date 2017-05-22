@@ -79,3 +79,14 @@ pt:
   missao: "Missão"
   news: "Notícias"
   contacts: "Contactos"
+
+  order.name: "Nome da encomenda"
+
+  state: "Estado"
+
+  my_orders: "Encomenda"
+
+  my_menu: "O meu menu"
+  orders: "Encomendas"
+  new_order: "Nova Encomenda"
+  contact_information: "Contacto"
